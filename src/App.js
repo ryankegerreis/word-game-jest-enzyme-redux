@@ -12,7 +12,7 @@ export default class App extends Component {
 				<Congrats success={true} />
 				<Input />
 				<GuessedWords
-					guessedWords={[{ guessedWord: 'train' }, { letterMatchCount: 3 }]}
+					guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
 				/>
 			</div>
 		);
