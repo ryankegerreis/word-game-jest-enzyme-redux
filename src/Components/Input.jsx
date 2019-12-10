@@ -20,17 +20,12 @@ class Input extends Component {
 			</form>
 		);
 
-		return (
-			<div>
-				<button />
-				{contents}
-			</div>
-		);
+		return <div data-test='component-input'>{contents}</div>;
 	}
 }
 
-const mapStateToProps = state => {
-	return {};
+const mapStateToProps = ({ success }) => {
+	return { success };
 };
 
 export default connect(mapStateToProps)(Input);
