@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { guessedWord } from '../Actions/Actions';
 
-class Input extends Component {
+export class UnconnectedInput extends Component {
 	render() {
 		const contents = this.props.success ? null : (
 			<form className='form-inline'>
@@ -16,7 +16,8 @@ class Input extends Component {
 				<button
 					data-test='submit-button'
 					className='btn btn-primary mb-2'
-					type='submit'>
+					type='submit'
+					onClick={() => this.props.guessedWord('train')}>
 					Submit
 				</button>
 			</form>
@@ -30,4 +31,4 @@ const mapStateToProps = ({ success }) => {
 	return { success };
 };
 
-export default connect(mapStateToProps, { guessedWord })(Input);
+export default connect(mapStateToProps, { guessedWord })(UnconnectedInput);
