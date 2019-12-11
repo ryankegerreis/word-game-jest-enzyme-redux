@@ -63,11 +63,11 @@ describe('guessWord action dispatcher', () => {
 			expect(newState).toEqual(expectedState);
 		});
 		test('updates state correctly for a successful guess', () => {
-			store.dispatch(guessedWord(unsuccessfulGuess));
+			store.dispatch(guessedWord(secretWord));
 			const newState = store.getState();
 			const expectedState = {
 				secretWord,
-				success: false,
+				success: true,
 				guessedWords: [
 					...guessedWords,
 					{ guessedWord: secretWord, letterMatchCount: 5 }
