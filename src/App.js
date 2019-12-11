@@ -6,7 +6,11 @@ import GuessedWords from './Components/GuessedWords';
 import Input from './Components/Input';
 import { getSecretWord } from './Actions/Actions';
 
-class App extends Component {
+export class UnconnectedApp extends Component {
+	componentDidMount() {
+		this.props.getSecretWord();
+	}
+
 	render() {
 		return (
 			<div className='container'>
@@ -24,4 +28,4 @@ const mapStateToProps = state => {
 	return { success, guessedWords, secretWord };
 };
 
-export default connect(mapStateToProps, { getSecretWord })(App);
+export default connect(mapStateToProps, { getSecretWord })(UnconnectedApp);
