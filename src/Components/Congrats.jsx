@@ -6,7 +6,7 @@ function Congrats(props) {
 		return (
 			<div data-test='component-congrats' className='alert alert-success'>
 				<span data-test='congrats-message'>
-					Congratulations! You guessed the beer!
+					Congratulations! You guessed the word!
 				</span>
 			</div>
 		);
